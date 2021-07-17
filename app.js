@@ -80,4 +80,6 @@ $(document).ready(() => {
   }
 
   translateLettersEnInRu($(".js-translete-letters"));
+
+  $(".js-mask-not-number").inputmask({ regex: "[^0-9]*" });
 });
