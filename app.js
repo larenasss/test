@@ -81,5 +81,12 @@ $(document).ready(() => {
 
   translateLettersEnInRu($(".js-translete-letters"));
 
-  $(".js-mask-not-number").inputmask({ regex: "[^0-9]*" });
+  function inputOnlyLetters(inputEl) {
+    $(inputEl).on("input", function () {
+      const input = $(this);
+      input.val(input.val().replace(/[/\d]/g, ""));
+    });
+  }
+
+  inputOnlyLetters($(".js-not-number"));
 });
